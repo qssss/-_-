@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>图书浏览</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/basic.css">
+        <script src="js/vue.min.js"></script>
+    </head>
+    <style>
+        .page01 {height: 100%;background: url(images/page01.png) no-repeat center center;position: relative;overflow:hidden;}
+        .page01 .content {margin-top: 118px;margin-left: 40px;}
+        .page01 .content .catetitle {width: 670px;height: 173px;background: url(images/A.png) no-repeat center center;margin-left: 50px;}
+        .page01 .bookwrap {position: relative;overflow: hidden;top: -65px;}
+        .page01 .booklist {width: 1736px;height: 865px;float: left;padding: 55px 60px 0 80px;background: url(images/layer.png) no-repeat center center;}
+        .page01 .booklist ul {height: 96%;overflow-y: scroll;}
+        .page01 .booklist ul::-webkit-scrollbar {width: 15px;}
+        .page01 .booklist ul::-webkit-scrollbar-thumb {background: url(images/scrollbar.png) no-repeat center center;}
+        .page01 .booklist ul li {float: left;width: 517px;height: 342px;background: url(images/list_bg.png) no-repeat center center;margin-right: 6px;}
+        .page01 .booklist ul li:nth-child(3n) {margin-right: 0;}
+        .page01 .booklist ul li a {display: block;width: 100%;height: 100%;}
+        .page01 .booklist ul li a .pic {position: relative;float:left;width: 210px;height: 210px;background: url(images/pic_bg.png) no-repeat center center;margin: 40px 15px 0 10px;}
+        .page01 .booklist ul li a .pic img {position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;width: 86%;height: 86%;;}
+        .page01 .booklist ul li a .details {float: left;width: 260px;margin-top: 55px;}
+        .page01 .booklist ul li a .details h1 {font-size: 22px;color: #adb6e3;margin-bottom: 8px;line-height: 1;font-family: '微软雅黑';}
+        .page01 .booklist ul li a .details p.author {font-size: 16px;color: #4da9d0;margin-bottom: 18px;line-height: 1;}
+        .page01 .booklist ul li a .details p {font-size: 16px;color: #555555;margin-bottom: 15px;line-height: 1;}
+        .page01 .bookcate {float: left;}
+        .page01 .bookcate {width: 138px;float: left;height: 840px;position: relative;left: -90px;z-index: 2;padding-top: 30px;overflow: hidden;}
+        .page01 .bookcate ul {height: 100%;overflow-y: auto;}
+        .page01 .bookcate ul::-webkit-scrollbar {display: none;}
+        .page01 .bookcate ul li {height: 179px;width: 138px;background: url(images/b.png) no-repeat center center;}
+    </style>
+    <body>
+        <div class="page01" id="app">
+            <div class="content">
+                <div class="catetitle"></div>
+                <div class="bookwrap">
+                    <div class="booklist">
+                        <ul>
+                            <li v-for="n in 10">
+                                <a href="javascript:;">
+                                    <div class="pic"><img src="images/pic.png"/></div>
+                                    <div class="details">
+                                        <h1>夏洛的网彩绘注音完整版</h1>
+                                        <p class="author">E·B·怀特 著</p>
+                                        <p class="press">出版社：上海译文出版社</p>
+                                        <p class="date">出版日期：2018-08-01</p>
+                                        <p class="num">索书号：48290482</p>
+                                        <p class="price">单   价：58.00元</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bookcate">
+                        <ul>
+                            <li v-for="n in 10"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            new Vue({
+                el:'#app',
+                data: {
+
+                }
+            })
+        </script>
+    </body>
+</html>

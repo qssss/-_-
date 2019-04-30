@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>图书详情</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/basic.css">
+        <script src="js/vue.min.js"></script>
+    </head>
+    <style>
+    .page02 {width: 100%;height: 100%;background: url(images/page02.png) no-repeat center center;position: relative;overflow: hidden;}
+    .page02 .content {position: relative;overflow: hidden;width: 1750px;height: 950px;margin: 120px auto 0;}
+    .page02 .content .BookBasic {float: left;}
+    .page02 .content .BookBasic .pic {margin-bottom: 100px;width: 498px;height: 380px;background: url(images/shu.png) no-repeat center center;position: relative;}
+    .page02 .content .BookBasic .pic img {position: absolute;left: 0;right: 0;top: 0;bottom: 0;width: 350px;height: 350px;margin: auto;}
+    .page02 .content .BookBasic .info {width: 380px;margin: 0 auto;}
+    .page02 .content .BookBasic .info h1 {font-size: 50px;color: #4480b6;font-weight: bold;margin-bottom: 22px;line-height: 50px;}
+    .page02 .content .BookBasic .info p.author {font-size: 26px;margin-bottom: 50px;line-height: 26px;color: #4480b6;}
+    .page02 .content .BookBasic .info p {color: #4480b6;font-size: 26px;margin-bottom: 10px;line-height: 26px;}
+    .page02 .content .BookBasic .info .other {width: 80%;margin: 0 auto;}
+    .page02 .content .BookDetails {float: left;width: 1011px;}
+    .page02 .content .BookDetails section .title {width: 1011px;height: 60px;background: url(images/bar.png) no-repeat center center;line-height: 60px;padding-left: 200px;color: #fff;font-size: 26px;}
+    .page02 .content .BookDetails section .cont {padding: 25px 0 30px 0;width: 730px;margin: 0 auto;}
+    .page02 .content .BookDetails section .cont p {color: #494c51;font-size: 18px;line-height: 30px;}
+    .page02 .content .BookDetails section.sec_cate .inner {position: relative;overflow: hidden;height: 180px;}
+    .page02 .content .BookDetails section.sec_cate .inner .box_one {float: left;width: 50%;}
+    .page02 .content .BookDetails section.sec_cate .inner .two_one {float: left;width: 50%;}
+    .page02 .content .BookDetails section.sec_cate .btn_more {display:block;width: 186px;height: 35px;background: url(images/btn_more.png) no-repeat center center;text-align: center;line-height: 35px;color: #fff;font-size: 16px;margin: 40px auto 0;}
+    </style>
+    <body>
+        <div class="page02" id="app">
+            <div class="content">
+                <div class="BookBasic">
+                    <div class="pic">
+                        <div class="inner">
+                            <img src="images/pic.png">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h1>世界欠我一个你</h1>
+                        <p class="author">作者:小馆长 著，天雪文化 出品</p>
+                        <div class="other">
+                            <p class="press">出版社：天津人民出版社</p>
+                            <p class="time">出版时间：2019年01月</p>
+                            <p class="number">索书号：567522</p>
+                            <p class="address">藏馆位置：c4-1298</p>
+                            <p class="price">单价：39.8元</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="BookDetails">
+                    <section>
+                        <div class="title">图书简介</div>
+                        <div class="cont">
+                            <p>1616万撩人心弦的感性文字，写尽你情感中的痛与希冀本书是由古灵精怪、特别有故事的小馆长所写的青春成长励志随笔集。
+                                在本书中，她通过自己和身边人的真实经历，表达了对成长和爱情的独到观点。
+                                曾经我希望有个如你一般的人将我藏好，护我周全，可你的转身退场是那样的潇洒漂亮，后来的我们，只有我，没有你。但是我会学会习惯一个人，变得更好。
+                            </p>
+                        </div>
+                    </section>
+                    <section class="sec_cate">
+                        <div class="title">图书目录</div>
+                        <div class="cont">
+                            <div class="inner">
+                                <div class="box_one">
+                                    <p>第一章 世界欠我一个你</p>
+                                    <p>002 最想要的宠爱是你给的</p>
+                                    <p>005 我想你了，但是我默默地没有告诉你</p>
+                                    <p>008 等你的消息最折磨人</p>
+                                    <p>第二章 谢谢你来到我的世界</p>
+                                    <p>042 醉过方知酒浓，爱过方知情重</p>
+                                </div>
+                                <div class="box_two">
+                                    <p>第三章 总要习惯一个人</p>
+                                    <p>088 真的，我可以独自熬过所有苦难</p>
+                                    <p>第四章 远方值得期待</p>
+                                    <p>132 我要的是毫无理由的偏心和宠爱</p>
+                                    <p>176 做人最要紧的就是开心</p>
+                                    <p>第六章 我与世界只差一个你</p>
+                                </div>
+                            </div>
+                            <button class="btn_more">点击显示全部</button>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="title">作者介绍</div>
+                        <div class="cont">
+                            <p>小馆长，公众号“小馆长”创始人和运营人，追求完美的处女座，古灵精怪，对情感和青春的经历有着细腻和独特的看法，在诸多夜晚带给读者理解与宽慰。她懂读者们在生活与成长中的委曲求全，同时也真诚地祝福每个人，能在每一段感情中找到真正的自己。</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script>
+            new Vue({
+                el:'#app',
+                data: {
+
+                }
+            })
+        </script>
+    </body>
+</html>
