@@ -3,19 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>图书浏览</title>
+        <title>图书排行</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="data/bookRanking.js"></script>
         <link rel="stylesheet" href="css/basic.css">
-        <link rel="stylesheet" href="css/page01.css">
-        <script src="data/bookBrowse.js"></script>
+        <link rel="stylesheet" href="css/page04.css">
         <script src="js/vue.min.js"></script>
         <script src="js/jquery-1.9.1.js"></script>
         <script src="js/xs.js"></script>
         <script src="js/base.js"></script>
     </head>
+
     <body>
-        <div class="page01" id="app">
+        <div class="page04" id="app">
             <div class="content">
                 <div class="catetitle"><img :src="catePic"/></div>
                 <div class="bookwrap">
@@ -38,11 +39,11 @@
                     </div>
                     <div class="bookcate">
                         <ul>
-                            <li  v-for="(n,index) in bookBrowse" @click="toggleCate(n,index)" :class="{active:index==current}">
+                            <li  v-for="(n,index) in bookRanking" @click="toggleCate(n,index)" :class="{active:index==current}">
                                 <a href="javascript:;">
                                     <img :src="n.default"/>
                                 </a>
-                            </li>
+						    </li>
                         </ul>
                     </div>
                 </div>
@@ -52,8 +53,8 @@
             new Vue({
                 el:'#app',
                 data: {
-                    catePic:"images/A_browse_selected.png",
-                    bookBrowse:[],
+                    catePic:"images/A_rank_selected.png",
+                    bookRanking:[],
                     current:0
                 },
                 mounted() {
@@ -61,7 +62,7 @@
                 },
                 methods:{
                     init() {
-                        this.bookBrowse = bookBrowse;
+                        this.bookRanking = bookRanking;
                     },
                     toggleCate(n,index) {
                         this.current = index;

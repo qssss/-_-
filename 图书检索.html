@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="no-js"> 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>图书检索</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/page06.css">
+    <script src="data/cateList.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/xs.js"></script>
+    <script src="js/base.js"></script>
+</head>
+
+<body>
+    <div class="page06 default" id="app">
+        <div class="page06_layer">
+            <div class="top_til">
+                <div class="search_box">
+                    <div class="search_w">
+                        <div class="search_all" >
+                            <div class="t" @click="showAll">{{alltext}}</div>
+                            <div class="b" >
+                                <div class="inner">
+                                    <div class="scroll">
+                                        <div v-for="n in searchList" @click="toggleAll(n)">{{n.text}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_category" @click="showCate">
+                            <div class="t">{{cateText}}</div>
+                            <div class="b">
+                                <div class="inner">
+                                    <div class="scroll">
+                                        <div v-for="n in cateList" @click="toggleCate(n)">{{n.text02}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_cell">
+                            <input type="text" name="" placeholder="请搜索你想看的书" @focus="showKeyBoard" >
+                            <a href="javascript:;" @click="searchBook"></a>
+                        </div>
+                        <div class="keyboard">
+                            <div class="keyboard_inner">
+                                <div class="c1">
+                                    <div class="keboard_s key_1">1</div>
+                                    <div class="keboard_s key_2">2</div>
+                                    <div class="keboard_s key_3">3</div>
+                                    <div class="keboard_s key_4">4</div>
+                                    <div class="keboard_s key_5">5</div>
+                                    <div class="keboard_s key_6">6</div>
+                                    <div class="keboard_s key_7">7</div>
+                                    <div class="keboard_s key_8">8</div>
+                                    <div class="keboard_s key_9">9</div>
+                                    <div class="keboard_s key_0">0</div>
+                                    <div class="keboard_s key_delete">delete</div>
+                                </div>
+                                <div class="c1">
+                                    <div class="keboard_s key_q">q</div>
+                                    <div class="keboard_s key_w">w</div>
+                                    <div class="keboard_s key_e">e</div>
+                                    <div class="keboard_s key_r">r</div>
+                                    <div class="keboard_s key_t">t</div>
+                                    <div class="keboard_s key_y">y</div>
+                                    <div class="keboard_s key_u">u</div>
+                                    <div class="keboard_s key_i">i</div>
+                                    <div class="keboard_s key_o">o</div>
+                                    <div class="keboard_s key_p">p</div>
+                                    <div class="keboard_s key_increace">+</div>
+                                    <div class="keboard_s key_decreace">-</div>
+                                </div>
+                                <div class="c1">
+                                    <div class="keboard_s key_a">a</div>
+                                    <div class="keboard_s key_s">s</div>
+                                    <div class="keboard_s key_d">d</div>
+                                    <div class="keboard_s key_f">f</div>
+                                    <div class="keboard_s key_g">g</div>
+                                    <div class="keboard_s key_h">h</div>
+                                    <div class="keboard_s key_j">j</div>
+                                    <div class="keboard_s key_k">k</div>
+                                    <div class="keboard_s key_l">l</div>
+                                    <div class="keboard_s key_xiahua">_</div>
+                                    <div class="keboard_s key_enter">enter</div>
+                                </div>
+                                <div class="c1">
+                                    <div class="keboard_s key_z">z</div>
+                                    <div class="keboard_s key_x">x</div>
+                                    <div class="keboard_s key_c">c</div>
+                                    <div class="keboard_s key_v">v</div>
+                                    <div class="keboard_s key_b">b</div>
+                                    <div class="keboard_s key_n">n</div>
+                                    <div class="keboard_s key_m">m</div>
+                                    <div class="keboard_s key_douhao">,</div>
+                                    <div class="keboard_s key_dot">.</div>
+                                    <div class="keboard_s key_wenhao">?</div>
+                                </div>
+                                <div class="c1">
+                                    <div class="key_kongge">space</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="search_res">已搜索到1234个结果</p>
+                    <button class="search_btn">搜索</button>
+                </div>
+            </div>
+            <div class="search_list">
+                <ul>
+                    <li v-for="n in 10">
+                        <a href="javascript:;">
+                            <div class="book_title">夏洛的网彩绘标注完整版</div>
+                            <div class="book_display">
+                                <div class="pic">
+                                    <img src=""/>
+                                </div>
+                                <div class="info">
+                                    <p class="author">作者：</p>
+                                    <p class="press">出版社：上海译文出版社</p>
+                                    <p class="date">出版日期：2018-08-01</p>
+                                    <p class="num">索书号：48290482</p>
+                                    <p class="price">单价：58.00元</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+    new Vue({
+        el:'#app',
+        data: {
+            flag: true,
+            cateList:[],
+            searchList:[],
+            alltext:'所有字段',
+            cateText:'分类'
+        },
+        mounted() {
+            this.init();
+        },
+        methods: {
+            init() {
+                this.cateList = cateList;
+                this.searchList = searchList;
+            },
+            showAll: function() {
+                var _all = document.getElementsByClassName('search_all')[0];
+                var _b = _all.getElementsByClassName('b')[0]
+                if(this.flag) {
+                    _b.style.display = 'block';
+                } else {
+                    _b.style.display = 'none';
+                }
+                this.flag = !this.flag;
+            },
+            showCate: function() {
+                var _all = document.getElementsByClassName('search_category')[0];
+                var _b = _all.getElementsByClassName('b')[0]
+                if(this.flag) {
+                    _b.style.display = 'block';
+                } else {
+                    _b.style.display = 'none';
+                }
+                this.flag = !this.flag;
+            },
+            searchBook: function() {
+                
+            },
+            showKeyBoard: function() {
+                console.log(this)
+            },
+            toggleAll(n) {
+                this.alltext = n.text;
+                this.showAll();
+            },
+            toggleCate(n) {
+                this.cateText = n.text02;
+                // this.showCate();
+            }
+
+        }
+    });
+    
+    </script>
+</body>
+</html>

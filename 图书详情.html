@@ -7,28 +7,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/basic.css">
+        <link rel="stylesheet" href="css/page02.css">
         <script src="js/vue.min.js"></script>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/xs.js"></script>
+        <script src="js/base.js"></script>
     </head>
-    <style>
-    .page02 {width: 100%;height: 100%;background: url(images/page02.png) no-repeat center center;position: relative;overflow: hidden;}
-    .page02 .content {position: relative;overflow: hidden;width: 1750px;height: 950px;margin: 120px auto 0;}
-    .page02 .content .BookBasic {float: left;}
-    .page02 .content .BookBasic .pic {margin-bottom: 100px;width: 498px;height: 380px;background: url(images/shu.png) no-repeat center center;position: relative;}
-    .page02 .content .BookBasic .pic img {position: absolute;left: 0;right: 0;top: 0;bottom: 0;width: 350px;height: 350px;margin: auto;}
-    .page02 .content .BookBasic .info {width: 380px;margin: 0 auto;}
-    .page02 .content .BookBasic .info h1 {font-size: 50px;color: #4480b6;font-weight: bold;margin-bottom: 22px;line-height: 50px;}
-    .page02 .content .BookBasic .info p.author {font-size: 26px;margin-bottom: 50px;line-height: 26px;color: #4480b6;}
-    .page02 .content .BookBasic .info p {color: #4480b6;font-size: 26px;margin-bottom: 10px;line-height: 26px;}
-    .page02 .content .BookBasic .info .other {width: 80%;margin: 0 auto;}
-    .page02 .content .BookDetails {float: left;width: 1011px;}
-    .page02 .content .BookDetails section .title {width: 1011px;height: 60px;background: url(images/bar.png) no-repeat center center;line-height: 60px;padding-left: 200px;color: #fff;font-size: 26px;}
-    .page02 .content .BookDetails section .cont {padding: 25px 0 30px 0;width: 730px;margin: 0 auto;}
-    .page02 .content .BookDetails section .cont p {color: #494c51;font-size: 18px;line-height: 30px;}
-    .page02 .content .BookDetails section.sec_cate .inner {position: relative;overflow: hidden;height: 180px;}
-    .page02 .content .BookDetails section.sec_cate .inner .box_one {float: left;width: 50%;}
-    .page02 .content .BookDetails section.sec_cate .inner .two_one {float: left;width: 50%;}
-    .page02 .content .BookDetails section.sec_cate .btn_more {display:block;width: 186px;height: 35px;background: url(images/btn_more.png) no-repeat center center;text-align: center;line-height: 35px;color: #fff;font-size: 16px;margin: 40px auto 0;}
-    </style>
+    
     <body>
         <div class="page02" id="app">
             <div class="content">
@@ -81,7 +66,7 @@
                                     <p>第六章 我与世界只差一个你</p>
                                 </div>
                             </div>
-                            <button class="btn_more">点击显示全部</button>
+                            <button class="btn_more" @click="showmore">点击显示全部</button>
                         </div>
                     </section>
                     <section>
@@ -98,6 +83,13 @@
                 el:'#app',
                 data: {
 
+                },
+                methods: {
+                    showmore() {
+                        var sec_cate = document.querySelector('.sec_cate');
+                        var inner = sec_cate.querySelector('.inner');
+                        inner.style.height = 'auto';
+                    }
                 }
             })
         </script>

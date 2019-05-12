@@ -3,3 +3,4 @@ html,body {width: 1920px;height: 1080px;}
 ul,li,ol {list-style: none;}
 a {text-decoration: none;}
 button {border: none;outline: none;}
+button,input {border: none;outline: none;}
