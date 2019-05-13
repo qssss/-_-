@@ -1,5 +1,5 @@
-/* .page06 {width: 100%;height: 100%;background: url(../images/page06.png) no-repeat center center;position: relative;overflow-y: hidden;}
-.page06 .topmenu {margin-top: 308px;height: 139px;padding-left: 50px;width: 100%;}
+.page06 {width: 100%;height: 100%;position: relative;overflow-y: hidden;}
+/* .page06 .topmenu {margin-top: 308px;height: 139px;padding-left: 50px;width: 100%;}
 .page06 .topmenu ul {display: block;width: 100%;height: 100%;overflow-x: auto;white-space: nowrap;overflow-y: hidden;}
 .page06 .topmenu ul::-webkit-scrollbar {display: none;}
 .page06 .topmenu ul li {display: inline-block;width: 176px;height: 139px;cursor: pointer;}
@@ -7,7 +7,7 @@
 .page06 .bookList ul {display: block;width: 100%;position: relative;overflow-y: auto;height: 100%;}
 .page06 .bookList ul::-webkit-scrollbar {width: 15px;}
 .page06 .bookList ul::-webkit-scrollbar-thumb {background: url(../images/scrollbar1.png) no-repeat center center;}
-.page06 .bookList ul li {width: 460px;height: 654px;background: url(../images/list_bg2.png) no-repeat center center;float: left;position: relative;}
+.page06 .bookList ul li {width: 460px;height: 654px;background: url(../images/list_bg.png) no-repeat center center;float: left;position: relative;}
 .page06 .bookList ul li:nth-child(2n-1) {margin-right: 40px;}
 .page06 .bookList ul li a {position: absolute;left: 10px;right: 10px;top: 46px;bottom: 7px;}
 .page06 .bookList ul li a .pic {width: 260px;height: 260px;margin: 50px auto 30px;overflow: hidden;background: #fff;}
@@ -20,6 +20,8 @@
 .page06.default {
     padding: 38px 31px 37px 32px;
 }
+.page06.default {background: url(../images/page06_default.png) no-repeat center center;}
+.page06.success {background: url(../images/page06_success.png) no-repeat center center;}
 .page06.default .search_list {
     display: none;
 }
@@ -57,7 +59,7 @@
     }
 }
 .page06.success .search_box .search_w {
-    margin-top: 107px;
+    margin-top: 65px;
 }
 .page06 p.search_res {
     width: 1000px;
@@ -94,7 +96,7 @@
 }
 .page06 .search_list ul::-webkit-scrollbar-thumb {
     border-radius:4px;
-    background: url(images/scrollbar.png) no-repeat bottom center;
+    background: url(../images/scrollbar.png) no-repeat bottom center;
 }
 .page06 .search_list ul li {
     position: relative;
@@ -103,6 +105,7 @@
     border: 1px solid orange;
     float: left;
     margin-right: 37px;
+	background: url(../images/list_bg_search.png) no-repeat center center;
 }
 .page06 .search_list ul li:nth-child(3n) {
     margin-right: 0;
@@ -113,7 +116,7 @@
     right: 11px;
     bottom: 28px;
     left: 10px;
-    background: #fff;
+  
 }
 .page06 .search_list ul li a .book_title {
     margin: 9px 0 40px;
@@ -129,31 +132,29 @@
     overflow: hidden;
 }
 .page06 .search_list ul li a .book_display .pic {
-    width:220px;
-    height:220px;
-    background:rgba(156,195,248,0);
-    box-shadow:7px 0px 24px 0px rgba(141,161,191,0.48);
-    border-radius:5px;
+    width:263px;
+    height:263px;
+    background:url(../images/pic_bg_search.png) no-repeat center center;
     float: left;
     position: relative;
     z-index: 2;
+	
 }
 .page06 .search_list ul li a .book_display .pic img {
     position: absolute;
     width: 201px;
     height: 201px;
-    left: 0;
+    left: 24px;
     right: 0;
-    top: 0;
+    top: 31px;
     bottom: 0;
-    margin: auto;
+   
 }
 .page06 .search_list ul li a .book_display .info {
-    /* position: absolute; */
-    margin-top: 20px;
+    position: absolute;
+    margin-top: 35px;
     width: 298px;
-    left: -10px;
-    position: relative;
+    left: 226px;
     float: left;
 }
 .page06 .search_list ul li a .book_display .info p {
