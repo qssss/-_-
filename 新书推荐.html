@@ -1,167 +1,225 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>新书推荐</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/basic.css">
-        <link rel="stylesheet" href="css/page03.css">
-        <script src="js/vue.min.js"></script>
-        <script src="js/jquery-1.9.1.js"></script>
-        <script src="js/xs.js"></script>
-        <script src="js/base.js"></script>
-        <script src="js/turn.min.js"></script>
-    </head>
-    <style>
-    .page03 {width: 100%;height: 100%;background: url(images/page03.png) no-repeat center center;}
-    .page03 .reading {width: 188px;height: 138px;background: url(images/email.png) no-repeat center center;position: absolute;top: 40px;right: 60px;}
-	.page03 .reading p {position: absolute;bottom: 18px;left: 68px;height: 35px;line-height: 35px;font-size: 35px;color: #91c49d;width: 108px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
-    </style>
-    <body>
-        <div class="page03" id="app">
-            <div class="page03_bookopen">
-                <div class="main">
-                    <div id="mainin" class="mainin">
-                        <div class="book_recomand"></div>
-                    </div>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新书推荐</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/page03.css">
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/xs.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/turn.min.js"></script>
+</head>
+<style>
+    .page03 {
+        width: 100%;
+        height: 100%;
+        background: url(images/page03.png) no-repeat center center;
+    }
+
+    .page03 .reading {
+        width: 188px;
+        height: 138px;
+        background: url(images/email.png) no-repeat center center;
+        position: absolute;
+        top: 40px;
+        right: 60px;
+    }
+
+    .page03 .reading p {
+        position: absolute;
+        bottom: 18px;
+        left: 68px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 35px;
+        color: #91c49d;
+        width: 108px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .page03 .page03_title {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 335px;
+        height: 270px;
+        background: url(images/page03_title.png) no-repeat center center;
+        z-index: 100;
+    }
+    .page03 .hua {
+        position: absolute;
+        width: 319px;
+        height: 246px;
+        top: 140px;
+        left: 50%;
+        margin-left: -160px;
+        background: url(images/hua.png) no-repeat center center;
+        z-index: 100;
+    }
+</style>
+
+<body>
+    <div class="page03" id="app">
+        <div class="reading">
+            <p>323232</p>
+        </div>
+        <div class="hua"></div>
+        <div class="page03_title"></div>
+        <div class="page03_bookopen">
+            <div class="main">
+                <div id="mainin" class="mainin">
+                    <div class="book_recomand"></div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-            new Vue({
-                el:'#app',
-                data:{
+        <div class="grass">
+			<div class="btn_box">
+				<span class="page_prev"></span>
+				<span class="page_next"></span>
+			</div>
+		</div>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {},
+            mounted: function () {
+                this.init();
+            },
+            methods: {
+                init: function () {
+                    console.log('333');
                 },
-                mounted: function() {
-                    this.init();
-                },
-                methods: {
-                    init: function() {
-                        console.log('333');
-                    },
-                    
-                }
-            })
-            $(function() {
-                _page = 0;
-                addData();
-                turnBook();
-                goPrev();
-                goNext();
-            
-                //首次加载到第二页
+
+            }
+        })
+        $(function () {
+            _page = 0;
+            addData();
+            turnBook();
+            goPrev();
+            goNext();
+
+            //首次加载到第二页
+            $('#mainin').turn('next');
+        })
+        //切换下一页
+        function goNext() {
+            $('.page_next').click(function () {
                 $('#mainin').turn('next');
-            })
-            //切换下一页
-            function goNext() {
-                $('.page_next').click(function() {
-                    $('#mainin').turn('next');
-                });
-            }
-            //切换上一页
-            function goPrev() {
-                $('.page_prev').click(function() {
-                    $('#mainin').turn('previous');
-                    var last = $("#mainin").turn("page");
-                    if(last<2) {
-                        $("#mainin").turn("page", 2);
-                    }
-                    clearInterval(timer);
-                    setTimeout(function() {
-                        clearInterval(timer);
-                        timer = setInterval(_trun,3000);
-                    },15000);
-                });
-                
-            }
-            //翻书初始化
-            function turnBook() {
-                $('#mainin').turn({
-                    display: 'double',
-                    acceleration: true,
-                    gradients: true,
-                    elevation:500,
-                    turnCorners: "bl,tr",
-                    duration: 1500,
-                    when: {
-                        turned: function(e, page) {
-                            // console.log(page)
-                        }
-                    }
-                }); 
-                
-            }
-            //图书简介切换
-            function _trun() {
-                var totalPage = $("#mainin").turn("pages");
+            });
+        }
+        //切换上一页
+        function goPrev() {
+            $('.page_prev').click(function () {
+                $('#mainin').turn('previous');
                 var last = $("#mainin").turn("page");
-                if(last == totalPage-1) {
+                if (last < 2) {
                     $("#mainin").turn("page", 2);
                 }
-                $('#mainin').turn('next');
-            }
-            // var timer = setInterval(_trun,4000);
-            
-            $(document).on('click','.card_tab',function() {
                 clearInterval(timer);
-                setTimeout(function() {
+                setTimeout(function () {
                     clearInterval(timer);
-                    timer = setInterval(_trun,3000);
-                },15000)
-                $(this).addClass('active').siblings().removeClass('active');
-                var _index = $(this).index();
-                $(this).parents('.book_recomand').find('.book_tab_pane').eq(_index).show().siblings().hide();
+                    timer = setInterval(_trun, 3000);
+                }, 15000);
             });
-            // $('.turn-page-wrapper').children().hide();
-            
-            //代码示例
-            var data = [{
-                'title':'少年读莎士比亚',
-                'author':'作者：[英]安德鲁.马修斯 著，[英]托尼.罗斯 绘',
-                'press':'江苏凤凰美术出版社',
-                'time':'2017-10-01',
-                'number':'4859302841',
-                'address':'C4-1298',
-                'price':'145.70',
-                'saled': 421,
-                'cont':'安德鲁·马修斯，国际知名童书作家，生活在英国的伯克郡。他已经为孩子们写了50多本书，作品被广泛翻译到世界各地，曾经两度获得英国童书奖——斯马尔蒂斯奖（the Smarties Award）。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。'
-            },
-            {
-                'title':'沉睡的森林',
-                'author':'东野圭吾',
-                'press':'南海出版公司',
-                'time':'2019-03',
-                'number':'4859302841',
-                'address':'C4-1298',
-                'price':'49.50',
-                'saled': 12421,
-                'cont':'东野圭吾《恶意》系列作，一本童话般唯美的长篇悬疑小说，《睡美人》的剧情仿佛成真了：舞台上，公主被纺锤刺中，舞台下，艺术总监被毒针刺死。日本销量超100万册。东野圭吾《恶意》系列作，一本童话般唯美的长篇悬疑小说，《睡美人》的剧情仿佛成真了：舞台上，公主被纺锤刺中，舞台下，艺术总监被毒针刺死。日本销量超100万册。东野圭吾《恶意》系列作，一本童话般唯美的长篇悬疑小说，《睡美人》的剧情仿佛成真了：舞台上，公主被纺锤刺中，舞台下，艺术总监被毒针刺死。日本销量超100万册。'
-            },
-            {
-                'title':' 一切所遇，欢迎光临',
-                'author':'作者：李荷西',
-                'press':'中国友谊出版公司',
-                'time':'2019-02',
-                'number':'4859302841',
-                'address':'C4-1298',
-                'price':'37.20',
-                'saled': 4543,
-                'cont':'荷西的文字始终弥漫着扑朔不定又耐人寻味的迷魅之气。情感的涓流涌跃于故事的夹缝，人物手挽手活起来，挂满灵感的涟漪。然而她并不执着于搅动情节的汪洋，从容自适地走笔中，轻叩心扉，一切所遇，欢迎光临。荷西的文字始终弥漫着扑朔不定又耐人寻味的迷魅之气。情感的涓流涌跃于故事的夹缝，人物手挽手活起来，挂满灵感的涟漪。然而她并不执着于搅动情节的汪洋，从容自适地走笔中，轻叩心扉，一切所遇，欢迎光临。荷西的文字始终弥漫着扑朔不定又耐人寻味的迷魅之气。情感的涓流涌跃于故事的夹缝，人物手挽手活起来，挂满灵感的涟漪。然而她并不执着于搅动情节的汪洋，从容自适地走笔中，轻叩心扉，一切所遇，欢迎光临。'
-            }]
 
-            function addData() {
-                var mainin = document.getElementById('mainin');
-                //循环添加书页的节点  data为上文中的data
-                for(var i = 0;i < data.length;i++) {
-                    var tempNode = 
+        }
+        //翻书初始化
+        function turnBook() {
+            $('#mainin').turn({
+                display: 'double',
+                acceleration: true,
+                gradients: true,
+                elevation: 500,
+                turnCorners: "bl,tr",
+                duration: 1500,
+                when: {
+                    turned: function (e, page) {
+                        // console.log(page)
+                    }
+                }
+            });
+
+        }
+        //图书简介切换
+        function _trun() {
+            var totalPage = $("#mainin").turn("pages");
+            var last = $("#mainin").turn("page");
+            if (last == totalPage - 1) {
+                $("#mainin").turn("page", 2);
+            }
+            $('#mainin').turn('next');
+        }
+        var timer = setInterval(_trun, 4000);
+
+        $(document).on('click', '.card_tab', function () {
+            clearInterval(timer);
+            setTimeout(function () {
+                clearInterval(timer);
+                timer = setInterval(_trun, 3000);
+            }, 15000)
+            $(this).addClass('active').siblings().removeClass('active');
+            var _index = $(this).index();
+            $(this).parents('.book_recomand').find('.book_tab_pane').eq(_index).show().siblings().hide();
+        });
+        // $('.turn-page-wrapper').children().hide();
+
+        //代码示例
+        var data = [{
+                'title': '少年读莎士比亚',
+                'author': '作者：[英]安德鲁.马修斯 著，[英]托尼.罗斯 绘',
+                'press': '江苏凤凰美术出版社',
+                'time': '2017-10-01',
+                'number': '4859302841',
+                'address': 'C4-1298',
+                'price': '145.70',
+                'saled': 421,
+                'cont': '安德鲁·马修斯，国际知名童书作家，生活在英国的伯克郡。他已经为孩子们写了50多本书，作品被广泛翻译到世界各地，曾经两度获得英国童书奖——斯马尔蒂斯奖（the Smarties Award）。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。'
+            },
+            {
+                'title': '沉睡的森林',
+                'author': '东野圭吾',
+                'press': '南海出版公司',
+                'time': '2019-03',
+                'number': '4859302841',
+                'address': 'C4-1298',
+                'price': '49.50',
+                'saled': 12421,
+                'cont': '东野圭吾《恶意》系列作，一本童话般唯美的长篇悬疑小说，《睡美人》的剧情仿佛成真了：舞台上，公主被纺锤刺中，舞台下，艺术总监被毒针刺死。日本销量超100万册。东野圭吾《恶意》系列作，一本童话般唯美的长篇悬疑小说，《睡美人》的剧情仿佛成真了：舞台上，公主被纺锤刺中，舞台下，艺术总监被毒针刺死。日本销量超100万册。东野圭吾《恶意》系列作，一本童话般唯美的长篇悬疑小说，《睡美人》的剧情仿佛成真了：舞台上，公主被纺锤刺中，舞台下，艺术总监被毒针刺死。日本销量超100万册。'
+            },
+            {
+                'title': ' 一切所遇，欢迎光临',
+                'author': '作者：李荷西',
+                'press': '中国友谊出版公司',
+                'time': '2019-02',
+                'number': '4859302841',
+                'address': 'C4-1298',
+                'price': '37.20',
+                'saled': 4543,
+                'cont': '荷西的文字始终弥漫着扑朔不定又耐人寻味的迷魅之气。情感的涓流涌跃于故事的夹缝，人物手挽手活起来，挂满灵感的涟漪。然而她并不执着于搅动情节的汪洋，从容自适地走笔中，轻叩心扉，一切所遇，欢迎光临。荷西的文字始终弥漫着扑朔不定又耐人寻味的迷魅之气。情感的涓流涌跃于故事的夹缝，人物手挽手活起来，挂满灵感的涟漪。然而她并不执着于搅动情节的汪洋，从容自适地走笔中，轻叩心扉，一切所遇，欢迎光临。荷西的文字始终弥漫着扑朔不定又耐人寻味的迷魅之气。情感的涓流涌跃于故事的夹缝，人物手挽手活起来，挂满灵感的涟漪。然而她并不执着于搅动情节的汪洋，从容自适地走笔中，轻叩心扉，一切所遇，欢迎光临。'
+            }
+        ]
+
+        function addData() {
+            var mainin = document.getElementById('mainin');
+            //循环添加书页的节点  data为上文中的data
+            for (var i = 0; i < data.length; i++) {
+                var tempNode =
                     `<div class="book_recomand left" >
                         <div class="pic">
-                            <img src="image/book.png"/>
+                            <img src="images/book.png"/>
                         </div>
-                        <div class="title">`+data[i].title+`</div>
-                        <div class="author">`+ data[i].author +`</div>
+                        <div class="title">` + data[i].title + `</div>
+                        <div class="author">` + data[i].author + `</div>
                     </div>
                     <div class="book_recomand right">
                         <div class="book_intro">
@@ -172,19 +230,18 @@
                             </div>
                             <div class="book_tab_contents">
                                 <div class="book_tab_pane book_duce active">
-                                    <div class="book_panel"></div>
                                     <div class="scroll">
                                         <div class="inner">
-                                            <div>出版社:`+ data[i].press + `</div>
-                                            <div>出版时间:`+ data[i].time + `</div>
-                                            <div>索书号:`+ data[i].number +`</div>
-                                            <div>馆藏位置:`+ data[i].address +`</div>
-                                            <div>单价:<span class="price">`+ data[i].price +`+</span>元<span class="hassaled">（已售：`+ data[i].saled+`）</span></div>
+                                            <div>出版社:` + data[i].press + `</div>
+                                            <div>出版时间:` + data[i].time + `</div>
+                                            <div>索书号:` + data[i].number + `</div>
+                                            <div>馆藏位置:` + data[i].address + `</div>
+                                            <div>单价:<span class="price">` + data[i].price +
+                    `+</span>元<span class="hassaled">（已售：` + data[i].saled + `）</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="book_tab_pane book_cate">
-                                    <div class="book_panel"></div>
                                     <div class="scroll">
                                         <div class="inner">
                                             <p>` + 'hahha' + `</p>
@@ -192,7 +249,6 @@
                                     </div>
                                 </div>
                                 <div class="book_tab_pane book_author">
-                                    <div class="book_panel"></div>
                                     <div class="scroll">
                                         <div class="inner">
                                             <p>` + data[i].cont + `</p>
@@ -202,9 +258,10 @@
                             </div>
                         </div>
                     </div>`
-                    mainin.innerHTML += tempNode;
-                }
-            } 
-        </script>
-    </body>
+                mainin.innerHTML += tempNode;
+            }
+        }
+    </script>
+</body>
+
 </html>
