@@ -1,0 +1,57 @@
+.page03 {width: 100%;height: 100%;background: url(../images/page01.png) no-repeat center center;position: relative;}
+.page03_top1 {width: 100%;height: 263px;background: url(../images/recomand_top1.png) no-repeat top center;position: absolute;z-index: 8;top: 0;left: 0;right: 0;z-index: 2;}
+.page03_top2 {width: 100%;height: 207px;background: url(../images/recomand_top2.png) no-repeat center center;position: absolute;z-index: 8;top: 0;left: 0;right: 0;}
+.page03_bookopen {width: 1395px;height: 856px;background: url(../images/book_open.png) no-repeat center center;position: absolute;left: 100px;right: 0;bottom: 0;top: 0;margin: auto;z-index: 7;}
+.balloon {width: 263px;height: 417px;position: absolute;background: url(../images/balloon.png) no-repeat center center;left: 225px;z-index: 10;animation: top_down 3s linear infinite alternate;}
+.cloud {width: 299px;height: 205px;position: absolute;background: url(../images/cloud.png) no-repeat center center;right: 18px;z-index: 10;}
+.home {width: 299px;height: 205px;position: absolute;background: url(../images/cloud.png) no-repeat center center;right: 18px;z-index: 10;}
+.grass {width: 100%;height: 172px;position: absolute;background: url(../images/grass.png) no-repeat center center;z-index: 10;bottom: 0;}
+.house {width: 248px;height: 257px;position: absolute;background: url(../images/house.png) no-repeat center center;z-index: 10;bottom: 110px;right: 180px;}
+.btn_box {position: relative;overflow-y: hidden;width: 180px;margin-left: 970px;margin-top: 60px;}
+.btn_box span {width: 36px;height: 36px;display: block;cursor: pointer;}
+.btn_box span.page_prev {background: url(../images/prev_btn.png) no-repeat center center;float: left;}
+.btn_box span.page_next {background: url(../images/next_btn.png) no-repeat center center;float: right;}
+.balloon_text {position: absolute;bottom: 0;left: 100px;bottom: 43px;color: #fff;left: 124px;width: 104px;transform: rotate(-12deg);height: 77px;text-align: center;}
+.balloon_text .p2 {font-size: 30px;}
+.balloon_text p {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-top: 8px;}
+.main {width: 1400;height: 796px;margin-left: 32px;}
+.main .mainin {width: 100%;height: 100%;}
+.book_recomand {background: #fff;width: 400px;}
+.book_recomand.left .title {text-align: center;color: #74a526;font-size: 40px;margin-bottom: 30px;padding: 0 10px;white-space: nowrap;overflow-y: hidden;text-overflow: ellipsis;}
+.book_recomand.left .author {text-align: center;color: #4da9d0;}
+.book_recomand.left .pic {margin: 0 auto;width: 300px;height: 300px;display: block;border: 1px solid #ffc2c6;margin-top: 115px;margin-bottom: 80px;}
+.book_recomand.left .pic img {display: block;width: 100%;height: 100%;}
+
+@keyframes top_down {0% {transform: translateY(0);}100% {transform: translateY(60px);}}
+
+
+.book_recomand.right .book_tab_pane {display: none;}
+.book_recomand.right .book_tab_pane.book_duce {display: block;}
+.book_recomand.right .book_tabs_nav {position: relative;z-index: 1000;}
+.book_recomand.right .book_panel {width: 315px;height: 260px;margin: 0 auto;position: relative;top: -70px;}
+.book_recomand.right .book_panel {width: 314px;height: 284px;background-repeat: no-repeat;background-position: center;}
+.book_duce .book_panel {background-image: url(../images/tushumulu.png);}
+.book_cate .book_panel {background-image: url(../images/zuozhejieshao.png);}
+.book_author .book_panel {background-image: url(../images/tushujianjie.png);}
+.book_duce .scroll .inner {margin-left: 100px;}
+.book_duce .scroll .inner div {font-size: 35px;color: #4da9d0;margin-bottom: 8px;}
+.book_cate .scroll,.book_author .scroll {width: 540px;height: 446px;background: url(../images/rect.png) no-repeat center center;padding: 35px 24px 20px;margin-left: 40px;position: relative;top: -50px;}
+.book_cate .scroll .inner,.book_author .scroll .inner {overflow-y: auto;width: 100%;height: 100%;}
+.book_cate .scroll .inner p,.book_author .scroll .inner p {margin-bottom: 20px;text-indent: 2em;font-size: 24px;color: #74a426;}
+/* 滚动条 */
+.book_cate .scroll .inner::-webkit-scrollbar,.book_author .scroll .inner::-webkit-scrollbar {width:22px;background:#cdcdcd;border-radius:4px;}
+.book_cate .scroll .inner::-webkit-scrollbar-thumb,.book_author .scroll .inner::-webkit-scrollbar-thumb {width: 10px;border:1px solid rgba(255,255,255,.16);border-radius:4px;background:#5cd3cf url(../images/car.png) no-repeat bottom center;background-size: 22px auto}
+.page03_bookopen .card_box {position: absolute;width: 86px;height: 520px;right: -12px;top: 80px;z-index: 100;}
+.page03_bookopen .card_box .card_tab {color: #fff;text-align: center;cursor: pointer;}
+.page03_bookopen .card_box .card_tab i {display: block;font-style: normal;font-size: 25px;}
+.page03_bookopen .card_box .tab1 {position: absolute;left: 0;top: 0;right: 0;width: 86px;height: 216px;background: url(../images/tab1.png) no-repeat center center;z-index: 10;}
+.page03_bookopen .card_box .tab2 {position: absolute;left: 0;top: 150px;right: 0;width: 86px;height: 216px;background: url(../images/tab2.png) no-repeat center center;z-index: 9;}
+.page03_bookopen .card_box .tab3 {position: absolute;left: -14px;top: 300px;right: 0;width: 102px;height: 232px;background: url(../images/tab3.png) no-repeat center center;z-index: 8;}
+.page03_bookopen .card_box .card_tab span {width: 37px;height: 43px;background-repeat: no-repeat;margin-top: 10px;margin-left: 20px;}
+.page03_bookopen .card_box .tab1 span {display: block;background-image: url(../images/tab3_icon.png);}
+.page03_bookopen .card_box .tab2 span {display: block;background-image: url(../images/tab1_icon.png);}
+.page03_bookopen .card_box .tab3 span {display: block;background-image: url(../images/tab2_icon.png);}
+
+.flower{position:absolute;top:0;color:blue;z-index: 10000;width: 75px;height: 78px;background: url(../images/hua.png) no-repeat center center;background-size: 25px 25px;}
+
+* {pointer-events:auto!important;}
