@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,62 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/basic.css">
     <link rel="stylesheet" href="css/page03.css">
-    <script src="js/vue.min.js"></script>
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/xs.js"></script>
     <script src="js/base.js"></script>
     <script src="js/turn.min.js"></script>
+    <script src="js/vue.min.js"></script>
 </head>
-<style>
-    .page03 {
-        width: 100%;
-        height: 100%;
-        background: url(images/page03.png) no-repeat center center;
-    }
-
-    .page03 .reading {
-        width: 188px;
-        height: 138px;
-        background: url(images/email.png) no-repeat center center;
-        position: absolute;
-        top: 40px;
-        right: 60px;
-    }
-
-    .page03 .reading p {
-        position: absolute;
-        bottom: 18px;
-        left: 68px;
-        height: 35px;
-        line-height: 35px;
-        font-size: 35px;
-        color: #91c49d;
-        width: 108px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    .page03 .page03_title {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 335px;
-        height: 270px;
-        background: url(images/page03_title.png) no-repeat center center;
-        z-index: 100;
-    }
-    .page03 .hua {
-        position: absolute;
-        width: 319px;
-        height: 246px;
-        top: 140px;
-        left: 50%;
-        margin-left: -160px;
-        background: url(images/hua.png) no-repeat center center;
-        z-index: 100;
-    }
-</style>
 
 <body>
     <div class="page03" id="app">
@@ -107,7 +56,6 @@
             turnBook();
             goPrev();
             goNext();
-
             //首次加载到第二页
             $('#mainin').turn('next');
         })
@@ -171,24 +119,26 @@
             var _index = $(this).index();
             $(this).parents('.book_recomand').find('.book_tab_pane').eq(_index).show().siblings().hide();
         });
-        // $('.turn-page-wrapper').children().hide();
+        $('.turn-page-wrapper').children().hide();
 
         //代码示例
         var data = [{
                 'title': '少年读莎士比亚',
                 'author': '作者：[英]安德鲁.马修斯 著，[英]托尼.罗斯 绘',
+                'num':'借阅量：27832',
                 'press': '江苏凤凰美术出版社',
                 'time': '2017-10-01',
                 'number': '4859302841',
                 'address': 'C4-1298',
                 'price': '145.70',
                 'saled': 421,
-                'cont': '安德鲁·马修斯，国际知名童书作家，生活在英国的伯克郡。他已经为孩子们写了50多本书，作品被广泛翻译到世界各地，曾经两度获得英国童书奖——斯马尔蒂斯奖（the Smarties Award）。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。'
+                'cont': '安德鲁·马修斯，国际知名童书作家，生活在英国的伯克郡。他已经为孩子们写了50多本书，作品被广泛翻译到世界各地，曾经两度获得英国童书奖——斯马尔蒂斯奖（the Smarties Award）。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。安德鲁·马修斯，国际知名童书作家，生活在英国的伯克郡。他已经为孩子们写了50多本书，作品被广泛翻译到世界各地，曾经两度获得英国童书奖——斯马尔蒂斯奖（the Smarties Award）。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。讲述了理查德如何通过阴谋诡计成为国王，为满足私欲，他一直步步为营。但却被自己用计谋赶走的王子所带领的军队打败。'
             },
             {
                 'title': '沉睡的森林',
                 'author': '东野圭吾',
                 'press': '南海出版公司',
+                'num':'借阅量：27832',
                 'time': '2019-03',
                 'number': '4859302841',
                 'address': 'C4-1298',
@@ -200,6 +150,7 @@
                 'title': ' 一切所遇，欢迎光临',
                 'author': '作者：李荷西',
                 'press': '中国友谊出版公司',
+                'num':'借阅量：27832',
                 'time': '2019-02',
                 'number': '4859302841',
                 'address': 'C4-1298',
@@ -220,16 +171,18 @@
                         </div>
                         <div class="title">` + data[i].title + `</div>
                         <div class="author">` + data[i].author + `</div>
+                        <div class="num">` + data[i].num + `</div>
                     </div>
                     <div class="book_recomand right">
                         <div class="book_intro">
                             <div class="card_box">
-                                <div class="card_tab tab1"><span></span><i>图</i><i>书</i><i>目</i><i>录</i></div>
-                                <div class="card_tab tab2"><span></span><i>作</i><i>者</i><i>介</i><i>绍</i></div>
-                                <div class="card_tab tab3"><span></span><i>图</i><i>书</i><i>简</i><i>介</i></div>
+                                <div class="card_tab tab1"><span></span><i>图</i><i>书</i><i>简</i><i>介</i></div>
+                                <div class="card_tab tab2"><span></span><i>图</i><i>书</i><i>目</i><i>录</i></div>
+                                <div class="card_tab tab3"><span></span><i>作</i><i>者</i><i>介</i><i>绍</i></div>
                             </div>
                             <div class="book_tab_contents">
                                 <div class="book_tab_pane book_duce active">
+                                    <div class="book_panel"></div>
                                     <div class="scroll">
                                         <div class="inner">
                                             <div>出版社:` + data[i].press + `</div>
@@ -242,6 +195,7 @@
                                     </div>
                                 </div>
                                 <div class="book_tab_pane book_cate">
+                                    <div class="book_panel"></div>
                                     <div class="scroll">
                                         <div class="inner">
                                             <p>` + 'hahha' + `</p>
@@ -249,6 +203,7 @@
                                     </div>
                                 </div>
                                 <div class="book_tab_pane book_author">
+                                    <div class="book_panel"></div>
                                     <div class="scroll">
                                         <div class="inner">
                                             <p>` + data[i].cont + `</p>

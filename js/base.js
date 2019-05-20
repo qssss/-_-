@@ -3,6 +3,8 @@ $(function() {
     $('.page01 .catetitle').xs999(6,{'color':'#adb6e3'});
     $(".page01 .booklist li").xs999(6,{'color':'#adb6e3'});
     $(".page01 .bookcate li").xs999(6);
+  
+    $('.page03 .page03_bookopen .card_box .card_tab').xs999(6);
     
     //图书检索列表
     $(".page06 .search_box .search_btn").xs999(6);
