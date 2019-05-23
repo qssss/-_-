@@ -7,22 +7,25 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="data/bookRanking.js"></script>
+        <link rel="stylesheet" href="layui/css/layui.css">
         <link rel="stylesheet" href="css/basic.css">
         <link rel="stylesheet" href="css/page04.css">
         <script src="js/vue.min.js"></script>
         <script src="js/jquery-1.9.1.js"></script>
         <script src="js/xs.js"></script>
         <script src="js/base.js"></script>
+        <script type="text/javascript" src="layui/layui.all.js"></script>
     </head>
-
+   
     <body>
         <div class="page04" id="app">
+            <div id="menu"><a href="弹窗.html"></a></div>
             <div class="content">
                 <div class="catetitle"><img :src="catePic"/></div>
                 <div class="bookwrap">
                     <div class="booklist">
                         <ul>
-                            <li v-for="n in 10">
+                            <li v-for="n in 9">
                                 <a href="javascript:;">
                                     <div class="pic"><img src="images/pic.png"/></div>
                                     <div class="details">
@@ -70,6 +73,25 @@
                     }
                 }  
             })
+
+            layui.use('flow', function(){
+			var flow = layui.flow;
+			flow.load({
+				elem: '.booklist ul', //流加载容器
+				isAuto: false,
+				isLazyimg: true,
+				done: function(page, next){ //加载下一页
+					//模拟插入
+					setTimeout(function(){
+						var lis = [];
+						for(var i = 0; i < 6; i++){
+							lis.push('<li></li>')
+						}
+						next(lis.join(''), page < 6); //假设总页数为 6
+					}, 500);
+				}
+  			});
+		});
         </script>
     </body>
 </html>

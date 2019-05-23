@@ -6,6 +6,7 @@
     <title>图书检索</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="css/basic.css">
     <link rel="stylesheet" href="css/page06.css">
     <script src="data/cateList.js"></script>
@@ -14,10 +15,12 @@
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/xs.js"></script>
     <script src="js/base.js"></script>
+    <script type="text/javascript" src="layui/layui.all.js"></script>
 </head>
 
 <body>
     <div class="page06 success" id="app">
+        <div id="menu"><a href="弹窗.html"></a></div>
         <div class="page06_layer">
             <div class="top_til">
                 <div class="search_box">
@@ -112,7 +115,7 @@
             </div>
             <div class="search_list">
                 <ul>
-                    <li v-for="n in 10">
+                    <li v-for="n in 9">
                         <a href="javascript:;">
                             <div class="book_title">夏洛的网彩绘标注完整版</div>
                             <div class="book_display">
@@ -189,7 +192,24 @@
 
         }
     });
-    
+    layui.use('flow', function(){
+        var flow = layui.flow;
+        flow.load({
+            elem: '.search_list ul', //流加载容器
+            isAuto: false,
+            isLazyimg: true,
+            done: function(page, next){ //加载下一页
+                //模拟插入
+                setTimeout(function(){
+                    var lis = [];
+                    for(var i = 0; i < 6; i++){
+                        lis.push('<li></li>')
+                    }
+                    next(lis.join(''), page < 6); //假设总页数为 6
+                }, 500);
+            }
+        });
+    });
     </script>
 </body>
 </html>

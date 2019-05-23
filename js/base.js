@@ -24,4 +24,7 @@ $(function() {
     
     //弹窗
     $('.page05 .block').xs999(6);
+
+
+    $('body').addClass('pt-page-scaleUp');
 })

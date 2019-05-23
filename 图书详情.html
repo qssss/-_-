@@ -13,9 +13,9 @@
         <script src="js/xs.js"></script>
         <script src="js/base.js"></script>
     </head>
-    
     <body>
         <div class="page02" id="app">
+            <div id="menu"><a href="弹窗.html"></a></div>
             <div class="content">
                 <div class="BookBasic">
                     <div class="pic">
@@ -77,6 +77,10 @@
                     </section>
                 </div>
             </div>
+            <div class="goBackPage" @click="goBack">
+                <img src="images/back_circle.png" class="circle"/>
+                <img src="images/back_arrow.png" class="arrow"/>
+            </div>
         </div>
         <script>
             new Vue({
@@ -89,6 +93,9 @@
                         var sec_cate = document.querySelector('.sec_cate');
                         var inner = sec_cate.querySelector('.inner');
                         inner.style.height = 'auto';
+                    },
+                    goBack() {
+                        history.go(-1);
                     }
                 }
             })

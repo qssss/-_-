@@ -1,6 +1,6 @@
 .page01 {height: 100%;background: url(../images/page01.png) no-repeat center center;position: relative;overflow:hidden;}
 .page01 .content {margin-top: 118px;margin-left: 40px;}
-.page01 .content .catetitle {width: 670px;height: 173px;background: url(../images/A.png) no-repeat center center;margin-left: 50px;}
+.page01 .content .catetitle {width: 670px;height: 173px;margin-left: 110px;}
 .page01 .bookwrap {position: relative;overflow: hidden;top: -65px;}
 .page01 .booklist {width: 1736px;height: 865px;float: left;padding: 55px 60px 0 80px;background: url(../images/layer.png) no-repeat center center;}
 .page01 .booklist ul {height: 96%;overflow-y: scroll;}
@@ -19,5 +19,11 @@
 .page01 .bookcate {width: 138px;float: left;height: 840px;position: relative;left: -90px;z-index: 2;padding-top: 30px;overflow: hidden;}
 .page01 .bookcate ul {height: 100%;overflow-y: auto;}
 .page01 .bookcate ul::-webkit-scrollbar {display: none;}
-.page01 .bookcate ul li {position:relative;height: 179px;width: 138px;background: url(../images/b.png) no-repeat center center;}
+.page01 .bookcate ul li {position:relative;height: 179px;width: 138px;}
 .page01 .bookcate ul li.active {left: -15px;}
+
+.layui-flow-more a cite {
+    color: #fff !important;
+    background-color: #adb6e3;
+    margin-top: 5px;
+}

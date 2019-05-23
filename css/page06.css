@@ -32,13 +32,11 @@
     width: 100%;
     height: 100%;
     margin: auto;
-    border: 1px solid red;
 }
 .page06 .top_til {
     width: 1274px;
     height: 373px;
     margin: 0 287px 0 306px;
-    border: 1px solid blue;
     position: relative;
     top: 206px;
 }
@@ -46,7 +44,7 @@
     height: 373px;
 }
 .page06.success .top_til {
-    height: 300px;
+    height: 255px;
     top: 0;
     animation: moveUP .8s ease-in-out;
 }
@@ -102,7 +100,6 @@
     position: relative;
     width: 541px;
     height: 372px;
-    border: 1px solid orange;
     float: left;
     margin-right: 37px;
 	background: url(../images/list_bg_search.png) no-repeat center center;
@@ -257,3 +254,8 @@
 
 .page06 .search_box .search_w .b .inner .scroll::-webkit-scrollbar {width:22px;border-radius:4px;}
 .page06 .search_box .search_w .b .inner .scroll::-webkit-scrollbar-thumb {border-radius:4px;background: url(../images/cate_scroll.png) no-repeat bottom center;}
+
+.layui-flow-more a cite {
+    position: relative;
+    top: -15px;
+}
